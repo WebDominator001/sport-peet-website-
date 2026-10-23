@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Каталог — BEAST FUEL</title>
+  <meta name="description" content="Весь каталог спортивного питания BEAST FUEL: протеин, креатин, витамины, предтреники.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230D0D0D%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 font-family=%22Arial Black, sans-serif%22 font-weight=%22900%22 fill=%22%23CCFF00%22 text-anchor=%22middle%22>B</text></svg>">
+  <meta property="og:title" content="Каталог — BEAST FUEL">
+<meta property="og:description" content="Весь каталог спортивного питания BEAST FUEL: протеин, креатин, витамины, предтреники.">
+<meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+<div class="custom-cursor" id="customCursor"></div>
+  <!-- ===================== HEADER (тот же, что на главной) ===================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="beastfuel.html" class="logo">BEAST<span>FUEL</span></a>
+
+      <nav class="nav" id="nav">
+        <a href="catalog.html" class="nav__link" data-i18n="nav_catalog">Каталог</a>
+        <a href="beastfuel.html#categories" class="nav__link" data-i18n="nav_categories">Категории</a>
+        <a href="about.html" class="nav__link" data-i18n="nav_about">О нас</a>
+        <a href="contacts.html" class="nav__link" data-i18n="nav_contacts">Контакты</a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang-switch" id="langSwitch">
+          <button class="lang-btn active" data-lang="ru">RU</button>
+          <button class="lang-btn" data-lang="en">EN</button>
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">🌙</button>
+        <button class="cart-btn" id="cartBtn" aria-label="Корзина">
+          🛒 <span class="cart-btn__count" id="cartCount">0</span>
+        </button>
+        <button class="burger" id="burger" aria-label="Меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== PAGE HEADER ===================== -->
+ <section class="page-head">
+  <div class="container">
+    <p class="page-head__eyebrow" data-i18n="section_catalog">Каталог товаров</p>
+    <h1 class="page-head__title" data-i18n="catalog_page_title">ВСЕ ТОВАРЫ</h1>
+  </div>
+</section>
+
+  <!-- ===================== CATALOG ===================== -->
+  <section class="catalog" id="catalog">
+    <div class="container">
+      <div class="catalog__head">
+        <div class="catalog__filters" id="catalogFilters">
+          <button class="filter-btn active" data-filter="all" data-i18n="filter_all">Все</button>
+          <button class="filter-btn" data-filter="protein" data-i18n="filter_protein">Протеин</button>
+          <button class="filter-btn" data-filter="creatine" data-i18n="filter_creatine">Креатин</button>
+          <button class="filter-btn" data-filter="vitamins" data-i18n="filter_vitamins">Витамины</button>
+          <button class="filter-btn" data-filter="preworkout" data-i18n="filter_preworkout">Предтреник</button>
+        </div>
+        <div class="catalog__toolbar">
+          <input type="text" class="search-input" id="searchInput" placeholder="Поиск товара..." data-i18n-placeholder="search_placeholder">
+          <select class="sort-select" id="sortSelect">
+            <option value="default" data-i18n="sort_default">Сортировка</option>
+            <option value="price-asc" data-i18n="sort_price_asc">Сначала дешевле</option>
+            <option value="price-desc" data-i18n="sort_price_desc">Сначала дороже</option>
+            <option value="name-asc" data-i18n="sort_name_asc">По названию А-Я</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="catalog__grid" id="catalogGrid"></div>
+    </div>
+  </section>
+
+  <!-- ===================== CART DRAWER ===================== -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__head">
+      <h3 data-i18n="cart_title">Корзина</h3>
+      <button class="cart-drawer__close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-drawer__items" id="cartItems"></div>
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__total">
+        <span data-i18n="cart_total_label">Итого:</span> <span id="cartTotal">0</span> <span data-i18n="cart_currency">сум</span>
+      </div>
+      <button class="btn btn--primary btn--full" id="checkoutBtn" data-i18n="cart_checkout">Оформить заказ</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+  <!-- ===================== PRODUCT MODAL ===================== -->
+  <div class="product-modal" id="productModal">
+    <div class="product-modal__content">
+      <button class="product-modal__close" id="modalClose">✕</button>
+      <div class="product-modal__grid">
+        <div class="product-modal__img-wrap">
+          <img src="" alt="" id="modalImg" class="product-modal__img">
+        </div>
+        <div class="product-modal__info">
+          <div class="product-modal__category" id="modalCategory"></div>
+          <h3 class="product-modal__name" id="modalName"></h3>
+          <p class="product-modal__desc" id="modalDesc"></p>
+          <div class="product-modal__price-row">
+            <span class="product-modal__price-old" id="modalOldPrice"></span>
+            <span class="product-modal__price" id="modalPrice"></span>
+          </div>
+          <button class="btn btn--primary btn--full" id="modalAddBtn" data-i18n="modal_add">Добавить в корзину</button>
+          <a href="#" id="modalDetailsLink" class="btn btn--ghost btn--full" data-i18n="modal_details" style="margin-top: 8px;">Подробнее →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+<!-- ===================== ORDER SUCCESS MODAL ===================== -->
+<div class="success-modal" id="successModal">
+  <div class="success-modal__content">
+    <div class="success-modal__icon">✓</div>
+    <h3 class="success-modal__title" data-i18n="success_title">Заказ отправлен!</h3>
+    <p class="success-modal__text" data-i18n="success_text">Мы открыли Telegram с готовым текстом заказа — просто нажмите «Отправить» в чате.</p>
+    <button class="btn btn--primary btn--full" id="successClose" data-i18n="success_close">Понятно</button>
+  </div>
+</div>
+
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer" id="contacts">
+  <div class="container footer__inner">
+    <div class="footer__col">
+      <a href="beastfuel.html" class="logo">BEAST<span>FUEL</span></a>
+      <p data-i18n="footer_tagline">Спортивное питание и витамины в Самарканде.</p>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer_contacts_title">Контакты</h4>
+      <p><span data-i18n="footer_phone_label">Телефон</span>: +998 91 036 16 39</p>
+      <p>Telegram: @beastfuel_uz</p>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer_nav_title">Навигация</h4>
+      <a href="catalog.html" data-i18n="nav_catalog">Каталог</a>
+      <a href="about.html" data-i18n="nav_about">О нас</a>
+      <a href="contacts.html" data-i18n="nav_contacts">Контакты</a>
+    </div>
+  </div>
+  <div class="footer__bottom" data-i18n="footer_bottom">© 2026 BEAST FUEL. Все права защищены.</div>
+</footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/catalog.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>

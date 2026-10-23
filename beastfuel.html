@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BEAST FUEL — спортивное питание и витамины</title>
+  <meta name="description" content="BEAST FUEL — протеин, креатин, витамины и добавки для тренировок. Быстрая доставка, честные цены.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 rx=%2220%22 fill=%22%230D0D0D%22/><text x=%2250%22 y=%2268%22 font-size=%2260%22 font-family=%22Arial Black, sans-serif%22 font-weight=%22900%22 fill=%22%23CCFF00%22 text-anchor=%22middle%22>B</text></svg>">
+  <meta property="og:title" content="BEAST FUEL — спортивное питание и витамины">
+<meta property="og:description" content="Протеин, креатин, витамины и добавки для тренировок. Быстрая доставка, честные цены.">
+<meta property="og:type" content="website">
+  <!-- Шрифты -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Стили: порядок важен — reset сначала, потом переменные, потом основные стили -->
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+
+  <div class="custom-cursor" id="customCursor"></div>
+<div class="custom-cursor-dot" id="customCursorDot"></div>
+
+  <!-- ===================== HEADER ===================== -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="beastfuel.html" class="logo">BEAST<span>FUEL</span></a>
+
+      <nav class="nav" id="nav">
+  <a href="catalog.html" class="nav__link" data-i18n="nav_catalog">Каталог</a>
+  <a href="#categories" class="nav__link" data-i18n="nav_categories">Категории</a>
+  <a href="about.html" class="nav__link" data-i18n="nav_about">О нас</a>
+  <a href="contacts.html" class="nav__link" data-i18n="nav_contacts">Контакты</a>
+</nav>
+
+      <div class="header__actions">
+        <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">🌙</button>
+        <div class="lang-switch" id="langSwitch">
+  <button class="lang-btn active" data-lang="ru">RU</button>
+  <button class="lang-btn" data-lang="en">EN</button>
+</div>
+        <button class="cart-btn" id="cartBtn" aria-label="Корзина">
+          🛒 <span class="cart-btn__count" id="cartCount">0</span>
+        </button>
+        <button class="burger" id="burger" aria-label="Меню">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===================== HERO ===================== -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="hero__eyebrow" data-i18n="hero_eyebrow">Топливо для тех, кто не сдаётся</p>
+<h1 class="hero__title">
+  <span data-i18n="hero_title_1">СТАНЬ</span> <span class="hero__title--accent" data-i18n="hero_title_accent">ЗВЕРЕМ</span><br>
+  <span data-i18n="hero_title_2">В КАЖДОМ ПОДХОДЕ</span>
+</h1>
+<p class="hero__subtitle" data-i18n="hero_subtitle">
+  Протеин, креатин, витамины и предтреники — всё, что нужно твоим мышцам, без переплаты за бренд.
+</p>
+        <div class="hero__cta">
+          <a href="#catalog" class="btn btn--primary" data-i18n="hero_btn_catalog">Смотреть каталог</a>
+          <a href="#about" class="btn btn--ghost" data-i18n="hero_btn_why">Почему мы</a>
+        </div>
+        <div class="hero__stats">
+  <div class="stat-item">
+    <div class="stat-item__num" data-target="500">0</div>
+    <div class="stat-item__label" data-i18n="stat_clients">довольных клиентов</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-item__num" data-target="50">0</div>
+    <div class="stat-item__label" data-i18n="stat_products">товаров в каталоге</div>
+  </div>
+  <div class="stat-item">
+    <div class="stat-item__num" data-target="24">0</div>
+    <div class="stat-item__label" data-i18n="stat_delivery">часа доставка</div>
+  </div>
+</div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__glow"></div>
+<div class="hero__glow--secondary"></div>
+<img src="assets/img/hero-jar.png" alt="BEAST FUEL протеин" class="hero__img" id="heroImg">
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ===================== PROMO BANNER ===================== -->
+<section class="promo-banner">
+  <div class="container promo-banner__inner">
+    <div class="promo-banner__text">
+      <span class="promo-banner__badge" data-i18n="promo_badge">🔥 Ограниченное предложение</span>
+      <h2 class="promo-banner__title" data-i18n="promo_title">Скидка 15% на первый заказ</h2>
+      <p class="promo-banner__subtitle" data-i18n="promo_subtitle">Промокод применяется автоматически при оформлении через Telegram</p>
+    </div>
+    <a href="catalog.html" class="btn btn--primary" data-i18n="hero_btn_catalog">Смотреть каталог</a>
+  </div>
+</section>
+
+
+<!-- ===================== MARQUEE ===================== -->
+<section class="marquee">
+  <div class="marquee__track">
+  <span class="marquee__item" data-i18n="marquee_1">⚡ БЫСТРАЯ ДОСТАВКА</span>
+  <span class="marquee__item" data-i18n="marquee_2">✅ ОРИГИНАЛЬНЫЕ БРЕНДЫ</span>
+  <span class="marquee__item" data-i18n="marquee_3">💰 ЧЕСТНЫЕ ЦЕНЫ</span>
+  <span class="marquee__item" data-i18n="marquee_4">💬 КОНСУЛЬТАЦИЯ БЕСПЛАТНО</span>
+  <span class="marquee__item" data-i18n="marquee_1">⚡ БЫСТРАЯ ДОСТАВКА</span>
+  <span class="marquee__item" data-i18n="marquee_2">✅ ОРИГИНАЛЬНЫЕ БРЕНДЫ</span>
+  <span class="marquee__item" data-i18n="marquee_3">💰 ЧЕСТНЫЕ ЦЕНЫ</span>
+  <span class="marquee__item" data-i18n="marquee_4">💬 КОНСУЛЬТАЦИЯ БЕСПЛАТНО</span>
+</div>
+</section>
+
+
+
+<!-- ===================== GOAL PICKER ===================== -->
+<section class="goal-picker">
+  <div class="container">
+    <p class="hero__eyebrow" data-i18n="goal_eyebrow">Персональный подбор</p>
+    <h2 class="section-title" data-i18n="goal_title">КАКАЯ У ТЕБЯ ЦЕЛЬ?</h2>
+    <p class="goal-picker__subtitle" data-i18n="goal_subtitle">Выбери цель — покажем то, что реально работает</p>
+
+    <div class="goal-picker__options">
+      <button class="goal-card" data-goal="bulk">
+        <span class="goal-card__icon">💪</span>
+        <span class="goal-card__name" data-i18n="goal_bulk">Набор массы</span>
+      </button>
+      <button class="goal-card" data-goal="cut">
+        <span class="goal-card__icon">🔥</span>
+        <span class="goal-card__name" data-i18n="goal_cut">Похудение</span>
+      </button>
+      <button class="goal-card" data-goal="endurance">
+        <span class="goal-card__icon">⚡</span>
+        <span class="goal-card__name" data-i18n="goal_endurance">Выносливость</span>
+      </button>
+    </div>
+
+    <div class="goal-picker__result" id="goalResult"></div>
+  </div>
+</section>
+
+
+
+
+
+<!-- ===================== BENTO FACTS ===================== -->
+<!-- ===================== BENTO FACTS ===================== -->
+<section class="bento">
+  <div class="container">
+    <h2 class="section-title" data-i18n="bento_title">В ОДНОМ МЕСТЕ</h2>
+    <div class="bento__grid">
+      <div class="bento-card bento-card--large">
+        <div class="bento-card__icon">🏆</div>
+        <div class="bento-card__num" data-target="500">0</div>
+        <div class="bento-card__label" data-i18n="bento_1_label">довольных клиентов по всему Самарканду</div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-card__icon">📦</div>
+        <div class="bento-card__num" data-target="50">0</div>
+        <div class="bento-card__label" data-i18n="bento_2_label">товаров в каталоге</div>
+      </div>
+      <div class="bento-card">
+        <div class="bento-card__icon">⚡</div>
+        <div class="bento-card__num"><span data-target="24">0</span><span data-i18n="bento_hours_unit">ч</span></div>
+        <div class="bento-card__label" data-i18n="bento_3_label">доставка по городу</div>
+      </div>
+      <div class="bento-card bento-card--wide">
+        <div class="bento-card__icon">✅</div>
+        <div class="bento-card__text" data-i18n="bento_4_text">Работаем напрямую с поставщиками — никакого контрафакта, только сертифицированные бренды</div>
+      </div>
+      <div class="bento-card bento-card--accent">
+        <div class="bento-card__icon">💬</div>
+        <div class="bento-card__text" data-i18n="bento_5_text">Бесплатная консультация перед покупкой в Telegram</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- ===================== CATEGORIES ===================== -->
+  <section class="categories" id="categories">
+    <div class="container">
+      <h2 class="section-title" data-i18n="section_categories">Категории</h2>
+      <div class="categories__grid" id="categoriesGrid">
+        <!-- Карточки категорий рендерятся через JS (catalog.js) -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== CATALOG ===================== -->
+<section class="catalog" id="catalog">
+  <div class="container">
+    <div class="catalog__head">
+      <h2 class="section-title" data-i18n="section_catalog">Каталог товаров</h2>
+      <a href="catalog.html" class="btn btn--ghost" data-i18n="hero_btn_catalog">Смотреть все →</a>
+    </div>
+
+    <div class="catalog__grid catalog__grid--featured" id="catalogGrid">
+</div>
+  </div>
+</section>
+
+  <!-- ===================== ABOUT / WHY US ===================== -->
+  <section class="about" id="about">
+    <div class="container about__inner">
+      <h2 class="section-title" data-i18n="section_about">Почему BEAST FUEL</h2>
+      <div class="about__grid">
+        <div class="about__card">
+          <div class="about__icon">✅</div>
+          <h3 data-i18n="about_1_title">Только сертифицированные бренды</h3>
+<p data-i18n="about_1_text">Работаем напрямую с поставщиками, никакого контрафакта.</p>
+        </div>
+        <div class="about__card">
+          <div class="about__icon">🚚</div>
+          <h3 data-i18n="about_2_title">Быстрая доставка</h3>
+<p data-i18n="about_2_text">По Самарканду — в день заказа, по Узбекистану — 1–3 дня.</p>
+        </div>
+        <div class="about__card">
+          <div class="about__icon">💬</div>
+          <h3 data-i18n="about_3_title">Консультация перед покупкой</h3>
+<p data-i18n="about_3_text">Поможем подобрать добавки под твою цель: масса, сушка, выносливость.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <!-- ===================== REVIEWS ===================== -->
+<section class="reviews">
+  <div class="container">
+    <h2 class="section-title" data-i18n="reviews_title">Отзывы клиентов</h2>
+    <div class="reviews__grid">
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text" data-i18n="review_1_text">Беру протеин уже третий месяц — вкус нормальный, растворяется хорошо, цена намного приятнее, чем в других магазинах города.</p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">А</div>
+          <div>
+            <div class="review-card__name">Азиз</div>
+            <div class="review-card__role" data-i18n="review_1_role">Клиент 3 месяца</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text" data-i18n="review_2_text">Заказывал креатин, доставили на следующий день по Самарканду. Ребята из телеграма отвечают быстро, всё по делу.</p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">Ш</div>
+          <div>
+            <div class="review-card__name">Шерзод</div>
+            <div class="review-card__role" data-i18n="review_2_role">Постоянный клиент</div>
+          </div>
+        </div>
+      </div>
+      <div class="review-card">
+        <div class="review-card__stars">★★★★★</div>
+        <p class="review-card__text" data-i18n="review_3_text">Помогли подобрать витамины под мою цель, объяснили дозировку. Видно, что разбираются, а не просто продают.</p>
+        <div class="review-card__author">
+          <div class="review-card__avatar">М</div>
+          <div>
+            <div class="review-card__name">Малика</div>
+            <div class="review-card__role" data-i18n="review_3_role">Новый клиент</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq">
+  <div class="container">
+    <h2 class="section-title" data-i18n="faq_title">Частые вопросы</h2>
+    <div class="faq__list" id="faqList">
+      <div class="faq-item">
+        <button class="faq-item__question">
+          <span data-i18n="faq_1_q">Как быстро приходит заказ?</span>
+          <span class="faq-item__icon">+</span>
+        </button>
+        <div class="faq-item__answer">
+          <p data-i18n="faq_1_a">По Самарканду доставляем в день заказа, по остальному Узбекистану — 1–3 дня в зависимости от региона.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__question">
+          <span data-i18n="faq_2_q">Как оплатить заказ?</span>
+          <span class="faq-item__icon">+</span>
+        </button>
+        <div class="faq-item__answer">
+          <p data-i18n="faq_2_a">Оплата наличными курьеру при получении или переводом на карту после подтверждения заказа в Telegram.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__question">
+          <span data-i18n="faq_3_q">Товар оригинальный?</span>
+          <span class="faq-item__icon">+</span>
+        </button>
+        <div class="faq-item__answer">
+          <p data-i18n="faq_3_a">Да, мы работаем напрямую с поставщиками и не продаём подделки — у каждого товара есть сертификат.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-item__question">
+          <span data-i18n="faq_4_q">Можно вернуть товар?</span>
+          <span class="faq-item__icon">+</span>
+        </button>
+        <div class="faq-item__answer">
+          <p data-i18n="faq_4_a">Если упаковка не вскрыта — можно вернуть или обменять в течение 14 дней. Свяжитесь с нами в Telegram.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- ===================== CART DRAWER ===================== -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer__head">
+      <h3 data-i18n="cart_title">Корзина</h3>
+      <button class="cart-drawer__close" id="cartClose">✕</button>
+    </div>
+    <div class="cart-drawer__items" id="cartItems">
+      <!-- Товары в корзине рендерятся через JS (cart.js) -->
+    </div>
+    <div class="cart-drawer__footer">
+      <div class="cart-drawer__total">
+        <span data-i18n="cart_total_label">Итого:</span> <span id="cartTotal">0</span> <span data-i18n="cart_currency">сум</span>
+      </div>
+      <button class="btn btn--primary btn--full" id="checkoutBtn" data-i18n="cart_checkout">Оформить заказ</button>
+    </div>
+  </aside>
+  <div class="overlay" id="overlay"></div>
+
+
+  <!-- ===================== PRODUCT MODAL ===================== -->
+<div class="product-modal" id="productModal">
+  <div class="product-modal__content">
+    <button class="product-modal__close" id="modalClose">✕</button>
+    <div class="product-modal__grid">
+      <div class="product-modal__img-wrap">
+        <img src="" alt="" id="modalImg" class="product-modal__img">
+      </div>
+      <div class="product-modal__info">
+        <div class="product-modal__category" id="modalCategory"></div>
+        <h3 class="product-modal__name" id="modalName"></h3>
+        <p class="product-modal__desc" id="modalDesc"></p>
+        <div class="product-modal__price-row">
+          <span class="product-modal__price-old" id="modalOldPrice"></span>
+          <span class="product-modal__price" id="modalPrice"></span>
+        </div>
+        <button class="btn btn--primary btn--full" id="modalAddBtn" data-i18n="modal_add">Добавить в корзину</button>
+        <a href="#" id="modalDetailsLink" class="btn btn--ghost btn--full" data-i18n="modal_details" style="margin-top: 8px;">Подробнее →</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ===================== ORDER SUCCESS MODAL ===================== -->
+<div class="success-modal" id="successModal">
+  <div class="success-modal__content">
+    <div class="success-modal__icon">✓</div>
+    <h3 class="success-modal__title" data-i18n="success_title">Заказ отправлен!</h3>
+    <p class="success-modal__text" data-i18n="success_text">Мы открыли Telegram с готовым текстом заказа — просто нажмите «Отправить» в чате.</p>
+    <button class="btn btn--primary btn--full" id="successClose" data-i18n="success_close">Понятно</button>
+  </div>
+</div>
+
+  <!-- ===================== FOOTER ===================== -->
+<footer class="footer" id="contacts">
+  <div class="container footer__inner">
+    <div class="footer__col">
+      <a href="beastfuel.html" class="logo">BEAST<span>FUEL</span></a>
+      <p data-i18n="footer_tagline">Спортивное питание и витамины в Самарканде.</p>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer_contacts_title">Контакты</h4>
+      <p><span data-i18n="footer_phone_label">Телефон</span>: +998 91 036 16 39</p>
+      <p>Telegram: @beastfuel_uz</p>
+    </div>
+    <div class="footer__col">
+      <h4 data-i18n="footer_nav_title">Навигация</h4>
+      <a href="catalog.html" data-i18n="nav_catalog">Каталог</a>
+      <a href="about.html" data-i18n="nav_about">О нас</a>
+      <a href="contacts.html" data-i18n="nav_contacts">Контакты</a>
+    </div>
+  </div>
+  <div class="footer__bottom" data-i18n="footer_bottom">© 2026 BEAST FUEL. Все права защищены.</div>
+</footer>
+
+  <!-- Скрипты: порядок важен — сначала данные, потом логика, которая их использует -->
+  <script src="js/i18n.js"></script>
+  <script src="js/products.js"></script>
+<script src="js/catalog.js?v=2"></script>  <script src="js/cart.js"></script>
+  <script src="js/animations.js"></script>
+</body>
+</html>
